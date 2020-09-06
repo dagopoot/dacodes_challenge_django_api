@@ -1,0 +1,11 @@
+#Cache files
+*.pyc
+__pycache__/
+.vscode/
+
+#Database folder
+mysql/**
+
+#Environment files
+*.env
+.env*

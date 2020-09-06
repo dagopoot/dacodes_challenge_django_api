@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  dacodes_django:
+    container_name: dacodes-backend-django
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./dacodes:/code
+    ports:
+      - "8000:8000"

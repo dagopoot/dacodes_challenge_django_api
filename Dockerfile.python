@@ -1,0 +1,13 @@
+ 
+FROM python:3.8
+
+# Copy your application code to the container (make sure you create a .dockerignore file if any large files or directories should be excluded)
+RUN mkdir /code/
+WORKDIR /code/
+ADD ./dacodes/requirements.txt /code/
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# uWSGI will listen on this port
+EXPOSE 8000
